@@ -114,7 +114,13 @@
       </dict>
       <dict>
         <key>match</key>
-        <string>(?&lt;![\w\d.])0[xX][0-9A-Fa-f]+(\.[0-9A-Fa-f]+)?([eE]-?\d*)?([pP][-+]\d+)?</string>
+        <string>(?&lt;![\w\d.])0[xX][0-9A-Fa-f]+(\.[0-9A-Fa-f]*)?([eE]-?\d*)?([pP][-+]\d+)?</string>
+        <key>name</key>
+        <string>constant.numeric.float.hexadecimal.lua</string>
+      </dict>
+      <dict>
+        <key>match</key>
+        <string>(?&lt;![\w\d.])0[xX]\.[0-9A-Fa-f]+([eE]-?\d*)?([pP][-+]\d+)?</string>
         <key>name</key>
         <string>constant.numeric.float.hexadecimal.lua</string>
       </dict>
@@ -126,7 +132,13 @@
       </dict>
       <dict>
         <key>match</key>
-        <string>(?&lt;![\w\d.])\d+(\.\d+)?([eE]-?\d*)?</string>
+        <string>(?&lt;![\w\d.])\d+(\.\d*)?([eE]-?\d*)?</string>
+        <key>name</key>
+        <string>constant.numeric.float.lua</string>
+      </dict>
+      <dict>
+        <key>match</key>
+        <string>(?&lt;![\w\d.])\.\d+([eE]-?\d*)?</string>
         <key>name</key>
         <string>constant.numeric.float.lua</string>
       </dict>
