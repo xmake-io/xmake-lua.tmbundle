@@ -71,7 +71,11 @@
 			]
 		},
 		{
-			"match": "(?<![\\w\\d.])0[xX][0-9A-Fa-f]+(\\.[0-9A-Fa-f]+)?([eE]-?\\d*)?([pP][-+]\\d+)?",
+			"match": "(?<![\\w\\d.])0[xX][0-9A-Fa-f]+(\\.[0-9A-Fa-f]*)?([eE]-?\\d*)?([pP][-+]\\d+)?",
+			"name": "constant.numeric.float.hexadecimal.lua"
+		},
+		{
+			"match": "(?<![\\w\\d.])0[xX]\\.[0-9A-Fa-f]+([eE]-?\\d*)?([pP][-+]\\d+)?",
 			"name": "constant.numeric.float.hexadecimal.lua"
 		},
 		{
@@ -79,7 +83,11 @@
 			"name": "constant.numeric.integer.hexadecimal.lua"
 		},
 		{
-			"match": "(?<![\\w\\d.])\\d+(\\.\\d+)?([eE]-?\\d*)?",
+			"match": "(?<![\\w\\d.])\\d+(\\.\\d*)?([eE]-?\\d*)?",
+			"name": "constant.numeric.float.lua"
+		},
+		{
+			"match": "(?<![\\w\\d.])\\.\\d+([eE]-?\\d*)?",
 			"name": "constant.numeric.float.lua"
 		},
 		{
