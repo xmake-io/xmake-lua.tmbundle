@@ -597,12 +597,16 @@
                 <key>end</key>
                 <string>\n</string>
                 <key>name</key>
-                <string>comment.line.double-dash.doc.lua</string>
+                <string>comment.line.double-dash.documentation.lua</string>
                 <key>patterns</key>
                 <array>
                   <dict>
                     <key>include</key>
                     <string>#emmydoc</string>
+                  </dict>
+                  <dict>
+                    <key>include</key>
+                    <string>#ldoc_tag</string>
                   </dict>
                 </array>
               </dict>
@@ -621,6 +625,13 @@
                 <string>\n</string>
                 <key>name</key>
                 <string>comment.line.double-dash.lua</string>
+                <key>patterns</key>
+                <array>
+                  <dict>
+                    <key>include</key>
+                    <string>#ldoc_tag</string>
+                  </dict>
+                </array>
               </dict>
             </array>
           </dict>
@@ -1374,6 +1385,26 @@
             </array>
           </dict>
         </array>
+      </dict>
+      <key>ldoc_tag</key>
+      <dict>
+        <key>match</key>
+        <string>\G\s*(@)(alias|annotation|author|charset|class|classmod|comment|constructor|copyright|description|example|export|factory|field|file|fixme|function|include|lfunction|license|local|module|name|param|pragma|private|raise|release|return|script|section|see|set|static|submodule|summary|table|todo|topic|type|usage|warning|within)\b</string>
+        <key>end</key>
+        <string>(?!@)\b</string>
+        <key>captures</key>
+        <dict>
+          <key>1</key>
+          <dict>
+            <key>name</key>
+            <string>punctuation.definition.block.tag.ldoc</string>
+          </dict>
+          <key>2</key>
+          <dict>
+            <key>name</key>
+            <string>storage.type.class.ldoc</string>
+          </dict>
+        </dict>
       </dict>
     </dict>
   </dict>
