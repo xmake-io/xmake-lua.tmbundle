@@ -1463,7 +1463,7 @@
       <key>ldoc_summary</key>
       <dict>
         <key>begin</key>
-        <string>\G(?!\s*@\w+)</string>
+        <string>\G ?(?!@\w+| )</string>
         <key>beginCaptures</key>
         <dict>
           <key>0</key>
