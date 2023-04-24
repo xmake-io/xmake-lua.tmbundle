@@ -92,7 +92,7 @@
                 <array>
                   <dict>
                     <key>include</key>
-                    <string>#luadoc.type</string>
+                    <string>#emmydoc.type</string>
                   </dict>
                 </array>
               </dict>
@@ -566,6 +566,13 @@
                 </dict>
                 <key>name</key>
                 <string>comment.block.lua</string>
+                <key>patterns</key>
+                <array>
+                  <dict>
+                    <key>include</key>
+                    <string>#comment_documentation_bracket</string>
+                  </dict>
+                </array>
               </dict>
               <dict>
                 <key>begin</key>
@@ -597,12 +604,20 @@
                 <key>end</key>
                 <string>\n</string>
                 <key>name</key>
-                <string>comment.line.double-dash.doc.lua</string>
+                <string>comment.line.double-dash.documentation.lua</string>
                 <key>patterns</key>
                 <array>
                   <dict>
                     <key>include</key>
-                    <string>#luadoc</string>
+                    <string>#emmydoc</string>
+                  </dict>
+                  <dict>
+                    <key>include</key>
+                    <string>#ldoc_summary</string>
+                  </dict>
+                  <dict>
+                    <key>include</key>
+                    <string>#ldoc_tag</string>
                   </dict>
                 </array>
               </dict>
@@ -621,6 +636,13 @@
                 <string>\n</string>
                 <key>name</key>
                 <string>comment.line.double-dash.lua</string>
+                <key>patterns</key>
+                <array>
+                  <dict>
+                    <key>include</key>
+                    <string>#ldoc_tag</string>
+                  </dict>
+                </array>
               </dict>
             </array>
           </dict>
@@ -647,16 +669,59 @@
             </dict>
             <key>name</key>
             <string>comment.block.lua</string>
+            <key>patterns</key>
+            <array>
+              <dict>
+                <key>include</key>
+                <string>#comment_documentation_asterisk</string>
+              </dict>
+            </array>
           </dict>
         </array>
       </dict>
-      <key>luadoc</key>
+      <key>comment_documentation_asterisk</key>
+      <dict>
+        <key>begin</key>
+        <string>(?&lt;=/\*\*)([^*]|\*(?!/))*$</string>
+        <key> </key>
+        <string>(^|\G)[ \t]*\*(?!/)(?=([^*]|[*](?!/))*$)</string>
+        <key>patterns</key>
+        <array>
+          <dict>
+            <key>include</key>
+            <string>#emmydoc</string>
+          </dict>
+          <dict>
+            <key>include</key>
+            <string>#ldoc_tag</string>
+          </dict>
+        </array>
+      </dict>
+      <key>comment_documentation_bracket</key>
+      <dict>
+        <key>begin</key>
+        <string>(?&lt;=--\[\[)([^-]|\-(?!\]\]))*$</string>
+        <key>while</key>
+        <string>(^|\G)[ \t]*-*(?!\]\])(?=([^-]|[-](?!\]\]))*$)</string>
+        <key>patterns</key>
+        <array>
+          <dict>
+            <key>include</key>
+            <string>#emmydoc</string>
+          </dict>
+          <dict>
+            <key>include</key>
+            <string>#ldoc_tag</string>
+          </dict>
+        </array>
+      </dict>
+      <key>emmydoc</key>
       <dict>
         <key>patterns</key>
         <array>
           <dict>
             <key>begin</key>
-            <string>(?&lt;=---\s*)@class</string>
+            <string>(?&lt;=---[ \t]*)@class</string>
             <key>beginCaptures</key>
             <dict>
               <key>0</key>
@@ -685,7 +750,7 @@
           </dict>
           <dict>
             <key>begin</key>
-            <string>(?&lt;=---\s*)@enum</string>
+            <string>(?&lt;=---[ \t]*)@enum</string>
             <key>beginCaptures</key>
             <dict>
               <key>0</key>
@@ -716,7 +781,7 @@
           </dict>
           <dict>
             <key>begin</key>
-            <string>(?&lt;=---\s*)@type</string>
+            <string>(?&lt;=---[ \t]*)@type</string>
             <key>beginCaptures</key>
             <dict>
               <key>0</key>
@@ -731,13 +796,13 @@
             <array>
               <dict>
                 <key>include</key>
-                <string>#luadoc.type</string>
+                <string>#emmydoc.type</string>
               </dict>
             </array>
           </dict>
           <dict>
             <key>begin</key>
-            <string>(?&lt;=---\s*)@alias</string>
+            <string>(?&lt;=---[ \t]*)@alias</string>
             <key>beginCaptures</key>
             <dict>
               <key>0</key>
@@ -767,7 +832,7 @@
                 <array>
                   <dict>
                     <key>include</key>
-                    <string>#luadoc.type</string>
+                    <string>#emmydoc.type</string>
                   </dict>
                 </array>
               </dict>
@@ -775,7 +840,7 @@
           </dict>
           <dict>
             <key>begin</key>
-            <string>(?&lt;=---\s*)(@operator)\s*(\b[a-z]+)?</string>
+            <string>(?&lt;=---[ \t]*)(@operator)\s*(\b[a-z]+)?</string>
             <key>beginCaptures</key>
             <dict>
               <key>1</key>
@@ -795,13 +860,13 @@
             <array>
               <dict>
                 <key>include</key>
-                <string>#luadoc.type</string>
+                <string>#emmydoc.type</string>
               </dict>
             </array>
           </dict>
           <dict>
             <key>begin</key>
-            <string>(?&lt;=---\s*)@cast</string>
+            <string>(?&lt;=---[ \t]*)@cast</string>
             <key>beginCaptures</key>
             <dict>
               <key>0</key>
@@ -831,7 +896,7 @@
                 <array>
                   <dict>
                     <key>include</key>
-                    <string>#luadoc.type</string>
+                    <string>#emmydoc.type</string>
                   </dict>
                   <dict>
                     <key>match</key>
@@ -845,7 +910,7 @@
           </dict>
           <dict>
             <key>begin</key>
-            <string>(?&lt;=---\s*)@param</string>
+            <string>(?&lt;=---[ \t]*)@param</string>
             <key>beginCaptures</key>
             <dict>
               <key>0</key>
@@ -880,7 +945,7 @@
                 <array>
                   <dict>
                     <key>include</key>
-                    <string>#luadoc.type</string>
+                    <string>#emmydoc.type</string>
                   </dict>
                 </array>
               </dict>
@@ -888,7 +953,7 @@
           </dict>
           <dict>
             <key>begin</key>
-            <string>(?&lt;=---\s*)@return</string>
+            <string>(?&lt;=---[ \t]*)@return</string>
             <key>beginCaptures</key>
             <dict>
               <key>0</key>
@@ -909,13 +974,13 @@
               </dict>
               <dict>
                 <key>include</key>
-                <string>#luadoc.type</string>
+                <string>#emmydoc.type</string>
               </dict>
             </array>
           </dict>
           <dict>
             <key>begin</key>
-            <string>(?&lt;=---\s*)@field</string>
+            <string>(?&lt;=---[ \t]*)@field</string>
             <key>beginCaptures</key>
             <dict>
               <key>0</key>
@@ -954,7 +1019,7 @@
                   </dict>
                   <dict>
                     <key>include</key>
-                    <string>#luadoc.type</string>
+                    <string>#emmydoc.type</string>
                   </dict>
                   <dict>
                     <key>match</key>
@@ -968,7 +1033,7 @@
           </dict>
           <dict>
             <key>begin</key>
-            <string>(?&lt;=---\s*)@generic</string>
+            <string>(?&lt;=---[ \t]*)@generic</string>
             <key>beginCaptures</key>
             <dict>
               <key>0</key>
@@ -1012,7 +1077,7 @@
                   </dict>
                   <dict>
                     <key>include</key>
-                    <string>#luadoc.type</string>
+                    <string>#emmydoc.type</string>
                   </dict>
                 </array>
               </dict>
@@ -1020,7 +1085,7 @@
           </dict>
           <dict>
             <key>begin</key>
-            <string>(?&lt;=---\s*)@vararg</string>
+            <string>(?&lt;=---[ \t]*)@vararg</string>
             <key>beginCaptures</key>
             <dict>
               <key>0</key>
@@ -1035,13 +1100,13 @@
             <array>
               <dict>
                 <key>include</key>
-                <string>#luadoc.type</string>
+                <string>#emmydoc.type</string>
               </dict>
             </array>
           </dict>
           <dict>
             <key>begin</key>
-            <string>(?&lt;=---\s*)@overload</string>
+            <string>(?&lt;=---[ \t]*)@overload</string>
             <key>beginCaptures</key>
             <dict>
               <key>0</key>
@@ -1056,13 +1121,13 @@
             <array>
               <dict>
                 <key>include</key>
-                <string>#luadoc.type</string>
+                <string>#emmydoc.type</string>
               </dict>
             </array>
           </dict>
           <dict>
             <key>begin</key>
-            <string>(?&lt;=---\s*)@deprecated</string>
+            <string>(?&lt;=---[ \t]*)@deprecated</string>
             <key>beginCaptures</key>
             <dict>
               <key>0</key>
@@ -1076,7 +1141,7 @@
           </dict>
           <dict>
             <key>begin</key>
-            <string>(?&lt;=---\s*)@meta</string>
+            <string>(?&lt;=---[ \t]*)@meta</string>
             <key>beginCaptures</key>
             <dict>
               <key>0</key>
@@ -1090,7 +1155,7 @@
           </dict>
           <dict>
             <key>begin</key>
-            <string>(?&lt;=---\s*)@private</string>
+            <string>(?&lt;=---[ \t]*)@private</string>
             <key>beginCaptures</key>
             <dict>
               <key>0</key>
@@ -1104,7 +1169,7 @@
           </dict>
           <dict>
             <key>begin</key>
-            <string>(?&lt;=---\s*)@protected</string>
+            <string>(?&lt;=---[ \t]*)@protected</string>
             <key>beginCaptures</key>
             <dict>
               <key>0</key>
@@ -1118,7 +1183,7 @@
           </dict>
           <dict>
             <key>begin</key>
-            <string>(?&lt;=---\s*)@package</string>
+            <string>(?&lt;=---[ \t]*)@package</string>
             <key>beginCaptures</key>
             <dict>
               <key>0</key>
@@ -1132,7 +1197,7 @@
           </dict>
           <dict>
             <key>begin</key>
-            <string>(?&lt;=---\s*)@version</string>
+            <string>(?&lt;=---[ \t]*)@version</string>
             <key>beginCaptures</key>
             <dict>
               <key>0</key>
@@ -1161,7 +1226,7 @@
           </dict>
           <dict>
             <key>begin</key>
-            <string>(?&lt;=---\s*)@see</string>
+            <string>(?&lt;=---[ \t]*)@see</string>
             <key>beginCaptures</key>
             <dict>
               <key>0</key>
@@ -1190,7 +1255,7 @@
           </dict>
           <dict>
             <key>begin</key>
-            <string>(?&lt;=---\s*)@diagnostic</string>
+            <string>(?&lt;=---[ \t]*)@diagnostic</string>
             <key>beginCaptures</key>
             <dict>
               <key>0</key>
@@ -1241,7 +1306,7 @@
           </dict>
           <dict>
             <key>begin</key>
-            <string>(?&lt;=---\s*)@module</string>
+            <string>(?&lt;=---[ \t]*)@module</string>
             <key>beginCaptures</key>
             <dict>
               <key>0</key>
@@ -1262,7 +1327,7 @@
           </dict>
           <dict>
             <key>match</key>
-            <string>(?&lt;=---\s*)@(async|nodiscard)</string>
+            <string>(?&lt;=---[ \t]*)@(async|nodiscard)</string>
             <key>name</key>
             <string>storage.type.annotation.lua</string>
           </dict>
@@ -1289,7 +1354,7 @@
           </dict>
         </array>
       </dict>
-      <key>luadoc.type</key>
+      <key>emmydoc.type</key>
       <dict>
         <key>patterns</key>
         <array>
@@ -1322,7 +1387,7 @@
               </dict>
               <dict>
                 <key>include</key>
-                <string>#luadoc.type</string>
+                <string>#emmydoc.type</string>
               </dict>
               <dict>
                 <key>include</key>
@@ -1374,6 +1439,43 @@
             </array>
           </dict>
         </array>
+      </dict>
+      <key>ldoc_tag</key>
+      <dict>
+        <key>match</key>
+        <string>\G[ \t]*(@)(alias|annotation|author|charset|class|classmod|comment|constructor|copyright|description|example|export|factory|field|file|fixme|function|include|lfunction|license|local|module|name|param|pragma|private|raise|release|return|script|section|see|set|static|submodule|summary|tfield|thread|tparam|treturn|todo|topic|type|usage|warning|within)\b</string>
+        <key>end</key>
+        <string>(?!@)\b</string>
+        <key>captures</key>
+        <dict>
+          <key>1</key>
+          <dict>
+            <key>name</key>
+            <string>punctuation.definition.block.tag.ldoc</string>
+          </dict>
+          <key>2</key>
+          <dict>
+            <key>name</key>
+            <string>storage.type.class.ldoc</string>
+          </dict>
+        </dict>
+      </dict>
+      <key>ldoc_summary</key>
+      <dict>
+        <key>begin</key>
+        <string>\G ?(?!@\w+| )</string>
+        <key>beginCaptures</key>
+        <dict>
+          <key>0</key>
+          <dict>
+            <key>name</key>
+            <string>punctuation.definition.comment.lua</string>
+          </dict>
+        </dict>
+        <key>end</key>
+        <string>$</string>
+        <key>name</key>
+        <string>entity.name.section.ldoc</string>
       </dict>
     </dict>
   </dict>
