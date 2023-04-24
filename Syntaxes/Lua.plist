@@ -276,7 +276,7 @@
         <key>match</key>
         <string>\b(and|or|not|\|\||\&amp;\&amp;|\!)\b</string>
         <key>name</key>
-        <string>keyword.operator.lua</string>
+        <string>keyword.operator.logical.lua</string>
       </dict>
       <dict>
         <key>match</key>
