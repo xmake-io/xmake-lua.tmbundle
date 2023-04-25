@@ -613,10 +613,6 @@
                   </dict>
                   <dict>
                     <key>include</key>
-                    <string>#ldoc_summary</string>
-                  </dict>
-                  <dict>
-                    <key>include</key>
                     <string>#ldoc_tag</string>
                   </dict>
                 </array>
@@ -1459,23 +1455,6 @@
             <string>storage.type.class.ldoc</string>
           </dict>
         </dict>
-      </dict>
-      <key>ldoc_summary</key>
-      <dict>
-        <key>begin</key>
-        <string>\G ?(?!@\w+| )</string>
-        <key>beginCaptures</key>
-        <dict>
-          <key>0</key>
-          <dict>
-            <key>name</key>
-            <string>punctuation.definition.comment.lua</string>
-          </dict>
-        </dict>
-        <key>end</key>
-        <string>$</string>
-        <key>name</key>
-        <string>entity.name.section.ldoc</string>
       </dict>
     </dict>
   </dict>
