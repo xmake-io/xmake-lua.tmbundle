@@ -394,9 +394,6 @@
 									"include": "#emmydoc"
 								},
 								{
-									"include": "#ldoc_summary"
-								},
-								{
 									"include": "#ldoc_tag"
 								}
 							]
@@ -442,7 +439,7 @@
 		},
 		"comment_documentation_asterisk": {
 			"begin": "(?<=/\\*\\*)([^*]|\\*(?!/))*$",
-			" ": "(^|\\G)[ \\t]*\\*(?!/)(?=([^*]|[*](?!/))*$)",
+			" ": "^[ \\t]*\\*(?!/)(?=([^*]|[*](?!/))*$)",
 			"patterns": [
 				{
 					"include": "#emmydoc"
@@ -454,7 +451,7 @@
 		},
 		"comment_documentation_bracket": {
 			"begin": "(?<=--\\[\\[)([^-]|\\-(?!\\]\\]))*$",
-			"while": "(^|\\G)[ \\t]*-*(?!\\]\\])(?=([^-]|[-](?!\\]\\]))*$)",
+			"while": "^[ \\t]*-*(?!\\]\\])(?=([^-]|[-](?!\\]\\]))*$)",
 			"patterns": [
 				{
 					"include": "#emmydoc"
@@ -952,16 +949,6 @@
 					"name": "storage.type.class.ldoc"
 				}
 			}
-		},
-		"ldoc_summary": {
-			"begin": "\\G ?(?!@\\w+| )",
-			"beginCaptures": {
-				"0": {
-					"name": "punctuation.definition.comment.lua"
-				}
-			},
-			"end": "$",
-			"name": "entity.name.section.ldoc"
 		}
 	}
 }
