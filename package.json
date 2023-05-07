@@ -4,5 +4,8 @@
     "main": "build/build.js",
     "dependencies": {
         "plist": "latest"
+    },
+    "scripts": {
+        "build": "node ."
     }
 }
