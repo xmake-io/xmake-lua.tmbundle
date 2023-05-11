@@ -451,7 +451,7 @@
 		},
 		"comment_documentation_bracket": {
 			"begin": "(?<=--\\[\\[)([^-]|\\-(?!\\]\\]))*$",
-			"while": "^[ \\t]*-*(?![^\\r\\n]*\\]\\])",
+			"while": "(^|\\G)[ \\t]*-*(?![^\\r\\n]*\\]\\])",
 			"patterns": [
 				{
 					"include": "#emmydoc"
