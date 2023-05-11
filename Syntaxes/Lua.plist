@@ -698,7 +698,7 @@
         <key>begin</key>
         <string>(?&lt;=--\[\[)([^-]|\-(?!\]\]))*$</string>
         <key>while</key>
-        <string>^[ \t]*-*(?![^\r\n]*\]\])</string>
+        <string>(^|\G)[ \t]*-*(?![^\r\n]*\]\])</string>
         <key>patterns</key>
         <array>
           <dict>
