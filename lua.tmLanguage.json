@@ -366,7 +366,10 @@
 							"name": "comment.block.lua",
 							"patterns": [
 								{
-									"include": "#comment_documentation_bracket"
+									"include": "#emmydoc"
+								},
+								{
+									"include": "#ldoc_tag"
 								}
 							]
 						},
@@ -431,33 +434,12 @@
 					"name": "comment.block.lua",
 					"patterns": [
 						{
-							"include": "#comment_documentation_asterisk"
+							"include": "#emmydoc"
+						},
+						{
+							"include": "#ldoc_tag"
 						}
 					]
-				}
-			]
-		},
-		"comment_documentation_asterisk": {
-			"begin": "(?<=/\\*\\*)([^*]|\\*(?!/))*$",
-			" ": "^[ \\t]*\\*(?!/)(?=([^*]|[*](?!/))*$)",
-			"patterns": [
-				{
-					"include": "#emmydoc"
-				},
-				{
-					"include": "#ldoc_tag"
-				}
-			]
-		},
-		"comment_documentation_bracket": {
-			"begin": "(?<=--\\[\\[)([^-]|\\-(?!\\]\\]))*$",
-			"while": "(^|\\G)[ \\t]*-*(?![^\\r\\n]*\\]\\])",
-			"patterns": [
-				{
-					"include": "#emmydoc"
-				},
-				{
-					"include": "#ldoc_tag"
 				}
 			]
 		},

@@ -276,7 +276,7 @@
         <key>match</key>
         <string>\b(and|or|not|\|\||\&amp;\&amp;|\!)\b</string>
         <key>name</key>
-        <string>keyword.operator.logical.lua</string>
+        <string>keyword.operator.lua</string>
       </dict>
       <dict>
         <key>match</key>
@@ -570,7 +570,11 @@
                 <array>
                   <dict>
                     <key>include</key>
-                    <string>#comment_documentation_bracket</string>
+                    <string>#emmydoc</string>
+                  </dict>
+                  <dict>
+                    <key>include</key>
+                    <string>#ldoc_tag</string>
                   </dict>
                 </array>
               </dict>
@@ -669,45 +673,13 @@
             <array>
               <dict>
                 <key>include</key>
-                <string>#comment_documentation_asterisk</string>
+                <string>#emmydoc</string>
+              </dict>
+              <dict>
+                <key>include</key>
+                <string>#ldoc_tag</string>
               </dict>
             </array>
-          </dict>
-        </array>
-      </dict>
-      <key>comment_documentation_asterisk</key>
-      <dict>
-        <key>begin</key>
-        <string>(?&lt;=/\*\*)([^*]|\*(?!/))*$</string>
-        <key> </key>
-        <string>^[ \t]*\*(?!/)(?=([^*]|[*](?!/))*$)</string>
-        <key>patterns</key>
-        <array>
-          <dict>
-            <key>include</key>
-            <string>#emmydoc</string>
-          </dict>
-          <dict>
-            <key>include</key>
-            <string>#ldoc_tag</string>
-          </dict>
-        </array>
-      </dict>
-      <key>comment_documentation_bracket</key>
-      <dict>
-        <key>begin</key>
-        <string>(?&lt;=--\[\[)([^-]|\-(?!\]\]))*$</string>
-        <key>while</key>
-        <string>(^|\G)[ \t]*-*(?![^\r\n]*\]\])</string>
-        <key>patterns</key>
-        <array>
-          <dict>
-            <key>include</key>
-            <string>#emmydoc</string>
-          </dict>
-          <dict>
-            <key>include</key>
-            <string>#ldoc_tag</string>
           </dict>
         </array>
       </dict>
