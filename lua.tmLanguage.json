@@ -942,7 +942,6 @@
 		},
 		"ldoc_tag": {
 			"match": "\\G[ \\t]*(@)(alias|annotation|author|charset|class|classmod|comment|constructor|copyright|description|example|export|factory|field|file|fixme|function|include|lfunction|license|local|module|name|param|pragma|private|raise|release|return|script|section|see|set|static|submodule|summary|tfield|thread|tparam|treturn|todo|topic|type|usage|warning|within)\\b",
-			"end": "(?!@)\\b",
 			"captures": {
 				"1": {
 					"name": "punctuation.definition.block.tag.ldoc"
