@@ -545,6 +545,37 @@
             <array>
               <dict>
                 <key>begin</key>
+                <string>--\[(=*)\[@@@</string>
+                <key>beginCaptures</key>
+                <dict>
+                  <key>0</key>
+                  <dict>
+                    <key>name</key>
+                    <string>punctuation.definition.comment.begin.lua</string>
+                  </dict>
+                </dict>
+                <key>end</key>
+                <string>\]\1\]</string>
+                <key>endCaptures</key>
+                <dict>
+                  <key>0</key>
+                  <dict>
+                    <key>name</key>
+                    <string>punctuation.definition.comment.end.lua</string>
+                  </dict>
+                </dict>
+                <key>name</key>
+                <string/>
+                <key>patterns</key>
+                <array>
+                  <dict>
+                    <key>include</key>
+                    <string>source.lua</string>
+                  </dict>
+                </array>
+              </dict>
+              <dict>
+                <key>begin</key>
                 <string>--\[(=*)\[</string>
                 <key>beginCaptures</key>
                 <dict>
@@ -1412,8 +1443,6 @@
       <dict>
         <key>match</key>
         <string>\G[ \t]*(@)(alias|annotation|author|charset|class|classmod|comment|constructor|copyright|description|example|export|factory|field|file|fixme|function|include|lfunction|license|local|module|name|param|pragma|private|raise|release|return|script|section|see|set|static|submodule|summary|tfield|thread|tparam|treturn|todo|topic|type|usage|warning|within)\b</string>
-        <key>end</key>
-        <string>(?!@)\b</string>
         <key>captures</key>
         <dict>
           <key>1</key>
