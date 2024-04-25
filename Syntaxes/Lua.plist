@@ -211,10 +211,10 @@
         <string>&lt;\s*(const|close)\s*&gt;</string>
         <key>captures</key>
         <dict>
-          <key>1</key>
+          <key>0</key>
           <dict>
             <key>name</key>
-            <string>string.tag.lua</string>
+            <string>storage.type.attribute.lua</string>
           </dict>
         </dict>
       </dict>
@@ -720,7 +720,7 @@
         <array>
           <dict>
             <key>begin</key>
-            <string>(?&lt;=---[ \t]*)@class</string>
+            <string>(?&lt;=---)[ \t]*@class</string>
             <key>beginCaptures</key>
             <dict>
               <key>0</key>
@@ -749,7 +749,7 @@
           </dict>
           <dict>
             <key>begin</key>
-            <string>(?&lt;=---[ \t]*)@enum</string>
+            <string>(?&lt;=---)[ \t]*@enum</string>
             <key>beginCaptures</key>
             <dict>
               <key>0</key>
@@ -780,7 +780,7 @@
           </dict>
           <dict>
             <key>begin</key>
-            <string>(?&lt;=---[ \t]*)@type</string>
+            <string>(?&lt;=---)[ \t]*@type</string>
             <key>beginCaptures</key>
             <dict>
               <key>0</key>
@@ -801,7 +801,7 @@
           </dict>
           <dict>
             <key>begin</key>
-            <string>(?&lt;=---[ \t]*)@alias</string>
+            <string>(?&lt;=---)[ \t]*@alias</string>
             <key>beginCaptures</key>
             <dict>
               <key>0</key>
@@ -839,7 +839,7 @@
           </dict>
           <dict>
             <key>begin</key>
-            <string>(?&lt;=---[ \t]*)(@operator)\s*(\b[a-z]+)?</string>
+            <string>(?&lt;=---)[ \t]*(@operator)\s*(\b[a-z]+)?</string>
             <key>beginCaptures</key>
             <dict>
               <key>1</key>
@@ -865,7 +865,7 @@
           </dict>
           <dict>
             <key>begin</key>
-            <string>(?&lt;=---[ \t]*)@cast</string>
+            <string>(?&lt;=---)[ \t]*@cast</string>
             <key>beginCaptures</key>
             <dict>
               <key>0</key>
@@ -909,7 +909,7 @@
           </dict>
           <dict>
             <key>begin</key>
-            <string>(?&lt;=---[ \t]*)@param</string>
+            <string>(?&lt;=---)[ \t]*@param</string>
             <key>beginCaptures</key>
             <dict>
               <key>0</key>
@@ -952,7 +952,7 @@
           </dict>
           <dict>
             <key>begin</key>
-            <string>(?&lt;=---[ \t]*)@return</string>
+            <string>(?&lt;=---)[ \t]*@return</string>
             <key>beginCaptures</key>
             <dict>
               <key>0</key>
@@ -979,7 +979,7 @@
           </dict>
           <dict>
             <key>begin</key>
-            <string>(?&lt;=---[ \t]*)@field</string>
+            <string>(?&lt;=---)[ \t]*@field</string>
             <key>beginCaptures</key>
             <dict>
               <key>0</key>
@@ -1032,7 +1032,7 @@
           </dict>
           <dict>
             <key>begin</key>
-            <string>(?&lt;=---[ \t]*)@generic</string>
+            <string>(?&lt;=---)[ \t]*@generic</string>
             <key>beginCaptures</key>
             <dict>
               <key>0</key>
@@ -1084,7 +1084,7 @@
           </dict>
           <dict>
             <key>begin</key>
-            <string>(?&lt;=---[ \t]*)@vararg</string>
+            <string>(?&lt;=---)[ \t]*@vararg</string>
             <key>beginCaptures</key>
             <dict>
               <key>0</key>
@@ -1105,7 +1105,7 @@
           </dict>
           <dict>
             <key>begin</key>
-            <string>(?&lt;=---[ \t]*)@overload</string>
+            <string>(?&lt;=---)[ \t]*@overload</string>
             <key>beginCaptures</key>
             <dict>
               <key>0</key>
@@ -1126,7 +1126,7 @@
           </dict>
           <dict>
             <key>begin</key>
-            <string>(?&lt;=---[ \t]*)@deprecated</string>
+            <string>(?&lt;=---)[ \t]*@deprecated</string>
             <key>beginCaptures</key>
             <dict>
               <key>0</key>
@@ -1140,7 +1140,7 @@
           </dict>
           <dict>
             <key>begin</key>
-            <string>(?&lt;=---[ \t]*)@meta</string>
+            <string>(?&lt;=---)[ \t]*@meta</string>
             <key>beginCaptures</key>
             <dict>
               <key>0</key>
@@ -1154,7 +1154,7 @@
           </dict>
           <dict>
             <key>begin</key>
-            <string>(?&lt;=---[ \t]*)@private</string>
+            <string>(?&lt;=---)[ \t]*@private</string>
             <key>beginCaptures</key>
             <dict>
               <key>0</key>
@@ -1168,7 +1168,7 @@
           </dict>
           <dict>
             <key>begin</key>
-            <string>(?&lt;=---[ \t]*)@protected</string>
+            <string>(?&lt;=---)[ \t]*@protected</string>
             <key>beginCaptures</key>
             <dict>
               <key>0</key>
@@ -1182,7 +1182,7 @@
           </dict>
           <dict>
             <key>begin</key>
-            <string>(?&lt;=---[ \t]*)@package</string>
+            <string>(?&lt;=---)[ \t]*@package</string>
             <key>beginCaptures</key>
             <dict>
               <key>0</key>
@@ -1196,7 +1196,7 @@
           </dict>
           <dict>
             <key>begin</key>
-            <string>(?&lt;=---[ \t]*)@version</string>
+            <string>(?&lt;=---)[ \t]*@version</string>
             <key>beginCaptures</key>
             <dict>
               <key>0</key>
@@ -1225,7 +1225,7 @@
           </dict>
           <dict>
             <key>begin</key>
-            <string>(?&lt;=---[ \t]*)@see</string>
+            <string>(?&lt;=---)[ \t]*@see</string>
             <key>beginCaptures</key>
             <dict>
               <key>0</key>
@@ -1254,7 +1254,7 @@
           </dict>
           <dict>
             <key>begin</key>
-            <string>(?&lt;=---[ \t]*)@diagnostic</string>
+            <string>(?&lt;=---)[ \t]*@diagnostic</string>
             <key>beginCaptures</key>
             <dict>
               <key>0</key>
@@ -1305,7 +1305,7 @@
           </dict>
           <dict>
             <key>begin</key>
-            <string>(?&lt;=---[ \t]*)@module</string>
+            <string>(?&lt;=---)[ \t]*@module</string>
             <key>beginCaptures</key>
             <dict>
               <key>0</key>
@@ -1326,7 +1326,7 @@
           </dict>
           <dict>
             <key>match</key>
-            <string>(?&lt;=---[ \t]*)@(async|nodiscard)</string>
+            <string>(?&lt;=---)[ \t]*@(async|nodiscard)</string>
             <key>name</key>
             <string>storage.type.annotation.lua</string>
           </dict>
