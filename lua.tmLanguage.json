@@ -135,8 +135,8 @@
 		{
 			"match": "<\\s*(const|close)\\s*>",
 			"captures": {
-				"1": {
-					"name": "string.tag.lua"
+				"0": {
+					"name": "storage.type.attribute.lua"
 				}
 			}
 		},
