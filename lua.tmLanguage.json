@@ -466,7 +466,7 @@
 		"emmydoc": {
 			"patterns": [
 				{
-					"begin": "(?<=---[ \\t]*)@class",
+					"begin": "(?<=---)[ \\t]*@class",
 					"beginCaptures": {
 						"0": {
 							"name": "storage.type.annotation.lua"
@@ -485,7 +485,7 @@
 					]
 				},
 				{
-					"begin": "(?<=---[ \\t]*)@enum",
+					"begin": "(?<=---)[ \\t]*@enum",
 					"beginCaptures": {
 						"0": {
 							"name": "storage.type.annotation.lua"
@@ -505,7 +505,7 @@
 					]
 				},
 				{
-					"begin": "(?<=---[ \\t]*)@type",
+					"begin": "(?<=---)[ \\t]*@type",
 					"beginCaptures": {
 						"0": {
 							"name": "storage.type.annotation.lua"
@@ -519,7 +519,7 @@
 					]
 				},
 				{
-					"begin": "(?<=---[ \\t]*)@alias",
+					"begin": "(?<=---)[ \\t]*@alias",
 					"beginCaptures": {
 						"0": {
 							"name": "storage.type.annotation.lua"
@@ -544,7 +544,7 @@
 					]
 				},
 				{
-					"begin": "(?<=---[ \\t]*)(@operator)\\s*(\\b[a-z]+)?",
+					"begin": "(?<=---)[ \\t]*(@operator)\\s*(\\b[a-z]+)?",
 					"beginCaptures": {
 						"1": {
 							"name": "storage.type.annotation.lua"
@@ -561,7 +561,7 @@
 					]
 				},
 				{
-					"begin": "(?<=---[ \\t]*)@cast",
+					"begin": "(?<=---)[ \\t]*@cast",
 					"beginCaptures": {
 						"0": {
 							"name": "storage.type.annotation.lua"
@@ -590,7 +590,7 @@
 					]
 				},
 				{
-					"begin": "(?<=---[ \\t]*)@param",
+					"begin": "(?<=---)[ \\t]*@param",
 					"beginCaptures": {
 						"0": {
 							"name": "storage.type.annotation.lua"
@@ -618,7 +618,7 @@
 					]
 				},
 				{
-					"begin": "(?<=---[ \\t]*)@return",
+					"begin": "(?<=---)[ \\t]*@return",
 					"beginCaptures": {
 						"0": {
 							"name": "storage.type.annotation.lua"
@@ -636,7 +636,7 @@
 					]
 				},
 				{
-					"begin": "(?<=---[ \\t]*)@field",
+					"begin": "(?<=---)[ \\t]*@field",
 					"beginCaptures": {
 						"0": {
 							"name": "storage.type.annotation.lua"
@@ -671,7 +671,7 @@
 					]
 				},
 				{
-					"begin": "(?<=---[ \\t]*)@generic",
+					"begin": "(?<=---)[ \\t]*@generic",
 					"beginCaptures": {
 						"0": {
 							"name": "storage.type.annotation.lua"
@@ -705,7 +705,7 @@
 					]
 				},
 				{
-					"begin": "(?<=---[ \\t]*)@vararg",
+					"begin": "(?<=---)[ \\t]*@vararg",
 					"beginCaptures": {
 						"0": {
 							"name": "storage.type.annotation.lua"
@@ -719,7 +719,7 @@
 					]
 				},
 				{
-					"begin": "(?<=---[ \\t]*)@overload",
+					"begin": "(?<=---)[ \\t]*@overload",
 					"beginCaptures": {
 						"0": {
 							"name": "storage.type.annotation.lua"
@@ -733,7 +733,7 @@
 					]
 				},
 				{
-					"begin": "(?<=---[ \\t]*)@deprecated",
+					"begin": "(?<=---)[ \\t]*@deprecated",
 					"beginCaptures": {
 						"0": {
 							"name": "storage.type.annotation.lua"
@@ -742,7 +742,7 @@
 					"end": "(?=[\\n@#])"
 				},
 				{
-					"begin": "(?<=---[ \\t]*)@meta",
+					"begin": "(?<=---)[ \\t]*@meta",
 					"beginCaptures": {
 						"0": {
 							"name": "storage.type.annotation.lua"
@@ -751,7 +751,7 @@
 					"end": "(?=[\\n@#])"
 				},
 				{
-					"begin": "(?<=---[ \\t]*)@private",
+					"begin": "(?<=---)[ \\t]*@private",
 					"beginCaptures": {
 						"0": {
 							"name": "storage.type.annotation.lua"
@@ -760,7 +760,7 @@
 					"end": "(?=[\\n@#])"
 				},
 				{
-					"begin": "(?<=---[ \\t]*)@protected",
+					"begin": "(?<=---)[ \\t]*@protected",
 					"beginCaptures": {
 						"0": {
 							"name": "storage.type.annotation.lua"
@@ -769,7 +769,7 @@
 					"end": "(?=[\\n@#])"
 				},
 				{
-					"begin": "(?<=---[ \\t]*)@package",
+					"begin": "(?<=---)[ \\t]*@package",
 					"beginCaptures": {
 						"0": {
 							"name": "storage.type.annotation.lua"
@@ -778,7 +778,7 @@
 					"end": "(?=[\\n@#])"
 				},
 				{
-					"begin": "(?<=---[ \\t]*)@version",
+					"begin": "(?<=---)[ \\t]*@version",
 					"beginCaptures": {
 						"0": {
 							"name": "storage.type.annotation.lua"
@@ -797,7 +797,7 @@
 					]
 				},
 				{
-					"begin": "(?<=---[ \\t]*)@see",
+					"begin": "(?<=---)[ \\t]*@see",
 					"beginCaptures": {
 						"0": {
 							"name": "storage.type.annotation.lua"
@@ -816,7 +816,7 @@
 					]
 				},
 				{
-					"begin": "(?<=---[ \\t]*)@diagnostic",
+					"begin": "(?<=---)[ \\t]*@diagnostic",
 					"beginCaptures": {
 						"0": {
 							"name": "storage.type.annotation.lua"
@@ -849,7 +849,7 @@
 					]
 				},
 				{
-					"begin": "(?<=---[ \\t]*)@module",
+					"begin": "(?<=---)[ \\t]*@module",
 					"beginCaptures": {
 						"0": {
 							"name": "storage.type.annotation.lua"
@@ -863,7 +863,7 @@
 					]
 				},
 				{
-					"match": "(?<=---[ \\t]*)@(async|nodiscard)",
+					"match": "(?<=---)[ \\t]*@(async|nodiscard)",
 					"name": "storage.type.annotation.lua"
 				},
 				{
