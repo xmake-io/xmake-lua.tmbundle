@@ -149,7 +149,7 @@
 			"name": "keyword.control.lua"
 		},
 		{
-			"match": "\\b(local|global)\\b",
+			"match": "\\b(local)\\b",
 			"name": "keyword.local.lua"
 		},
 		{

@@ -232,7 +232,7 @@
       </dict>
       <dict>
         <key>match</key>
-        <string>\b(local|global)\b</string>
+        <string>\b(local)\b</string>
         <key>name</key>
         <string>keyword.local.lua</string>
       </dict>
